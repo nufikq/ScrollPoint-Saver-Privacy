@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy - ScrollPoint Saver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+            background: #f9f9f9;
+            color: #222;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        ul, ol {
+            margin-left: 1.5em;
+        }
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.95em;
+        }
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+        .category-list li {
+            margin-bottom: 0.5em;
+        }
+        .check {
+            color: green;
+            font-weight: bold;
+        }
+        .cross {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        hr {
+            margin: 2em 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+        .summary {
+            background: #eafaf1;
+            padding: 1em;
+            border-radius: 5px;
+            margin-top: 2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy for ScrollPoint Saver</h1>
+    <p><strong>Last Updated</strong>: August 6, 2025</p>
+
+    <h2>Overview</h2>
+    <p>ScrollPoint Saver is designed with privacy as a core principle. This extension helps users save and restore scroll positions on web pages while keeping all data completely local to their device.</p>
+
+    <h2>Single Purpose</h2>
+    <p>This extension serves one specific purpose: to save and restore scroll positions on web pages. Users can bookmark specific scroll locations on any webpage and quickly return to those positions later.</p>
+
+    <h2>Data Collection and Storage</h2>
+    <h3>What Data We Collect Locally:</h3>
+    <ol>
+        <li><strong>Scroll Positions</strong>: The vertical scroll position (<code>scrollTop</code> values) of scrollable elements on web pages</li>
+        <li><strong>Page URLs</strong>: Website URLs where scroll points are saved (using <code>window.location.href</code>)</li>
+        <li><strong>Element Selectors</strong>: CSS selectors to identify scrollable elements on pages (generated via DOM traversal)</li>
+        <li><strong>Custom Names</strong>: User-provided names for saved scroll points</li>
+    </ol>
+
+    <h3>What Data We <u>DO NOT</u> Collect:</h3>
+    <ul>
+        <li>Personal information (names, emails, addresses)</li>
+        <li>Browsing history beyond scroll point URLs</li>
+        <li>Content of web pages</li>
+        <li>User credentials or authentication data</li>
+        <li>Financial information</li>
+        <li>Location data</li>
+        <li>Communications or messages</li>
+    </ul>
+
+    <h3>How Data is Stored:</h3>
+    <ul>
+        <li>All data is stored locally using Chrome's <code>chrome.storage</code> API</li>
+        <li>No data is transmitted to external servers or third parties</li>
+        <li>Data persists only on your local device</li>
+        <li>No remote servers or databases are used</li>
+    </ul>
+
+    <h2>Technical Implementation Details</h2>
+    <h3>DOM Interaction:</h3>
+    <ul>
+        <li>The extension scans web pages for scrollable elements using <code>document.querySelectorAll('*')</code></li>
+        <li>It checks CSS properties (<code>overflow</code>, <code>overflowY</code>) to identify scrollable containers</li>
+        <li>Element selectors are generated using tag names and DOM hierarchy for later identification</li>
+    </ul>
+
+    <h3>Data Processing:</h3>
+    <ul>
+        <li>Scroll positions are captured using <code>element.scrollTop</code> property</li>
+        <li>Element identification uses CSS selectors (IDs, tag names, nth-child selectors)</li>
+        <li>All processing happens locally in your browser</li>
+    </ul>
+
+    <h2>Permissions Justification</h2>
+    <h3>Storage Permission</h3>
+    <ul>
+        <li><strong>Purpose</strong>: Save scroll point data locally</li>
+        <li><strong>Usage</strong>: Stores scroll positions, URLs, and user-defined names using Chrome's local storage</li>
+    </ul>
+
+    <h3>ActiveTab Permission</h3>
+    <ul>
+        <li><strong>Purpose</strong>: Access the currently active tab</li>
+        <li><strong>Usage</strong>: Read scroll positions and inject navigation buttons on the current webpage</li>
+    </ul>
+
+    <h3>Scripting Permission</h3>
+    <ul>
+        <li><strong>Purpose</strong>: Inject content scripts into web pages</li>
+        <li><strong>Usage</strong>: Execute code to detect scrollable elements, save positions, and create navigation buttons</li>
+    </ul>
+
+    <h3>Host Permission</h3>
+    <ul>
+        <li><strong>Purpose</strong>: Work on all websites</li>
+        <li><strong>Usage</strong>: Allow users to save scroll points on any website they visit without manual site-by-site permission</li>
+    </ul>
+
+    <h2>Data Usage and Sharing</h2>
+    <h3>Local Processing Only:</h3>
+    <ul>
+        <li>All scroll position calculations happen in your browser</li>
+        <li>Element detection and selector generation occur locally</li>
+        <li>No analytics or tracking data is collected</li>
+    </ul>
+
+    <h3>No Data Sharing:</h3>
+    <ul>
+        <li>Zero data transmission to external servers</li>
+        <li>No third-party integrations or data sharing</li>
+        <li>No advertising or marketing use of data</li>
+        <li>No user profiling or behavioral analysis</li>
+    </ul>
+
+    <h2>Data Retention and Control</h2>
+    <h3>User Control:</h3>
+    <ul>
+        <li>Users can delete individual scroll points through the extension interface</li>
+        <li>Users can delete all scroll points at once</li>
+        <li>Users can toggle visibility of scroll point buttons</li>
+        <li>Uninstalling the extension removes all stored data</li>
+    </ul>
+
+    <h3>Data Persistence:</h3>
+    <ul>
+        <li>Data persists between browser sessions until manually deleted</li>
+        <li>Data is tied to your Chrome profile and doesn't sync across devices</li>
+        <li>No automatic data backup or cloud storage</li>
+    </ul>
+
+    <h2>Security Measures</h2>
+    <h3>Local Security:</h3>
+    <ul>
+        <li>Data is protected by Chrome's built-in storage security</li>
+        <li>No network transmission means no interception risk</li>
+        <li>No external authentication or API keys required</li>
+    </ul>
+
+    <h3>Code Security:</h3>
+    <ul>
+        <li>No remote code execution</li>
+        <li>All functionality is contained within the extension package</li>
+        <li>No external script loading or dynamic code evaluation</li>
+    </ul>
+
+    <h2>Compliance Information</h2>
+    <h3>Chrome Web Store Categories:</h3>
+    <ul class="category-list">
+        <li><span class="check">✅</span> <strong>Web history</strong>: URLs where scroll points are saved</li>
+        <li><span class="check">✅</span> <strong>User activity</strong>: Scroll position data and user interactions with scroll points</li>
+        <li><span class="check">✅</span> <strong>Website content</strong>: CSS selectors and DOM element identification</li>
+        <li><span class="cross">❌</span> <strong>Not collected</strong>: Personal information, health data, financial data, authentication data, communications, location data</li>
+    </ul>
+
+    <h2>Contact Information</h2>
+    <p>For questions about this privacy policy or data practices, please contact [your contact information].</p>
+
+    <h2>Policy Updates</h2>
+    <p>This privacy policy may be updated to reflect changes in the extension's functionality. Users will be notified of material changes through the Chrome Web Store update process.</p>
+
+    <hr>
+    <div class="summary">
+        <strong>Summary</strong>: This extension operates entirely locally, stores only scroll-related data, and never transmits information to external servers. Your privacy and data remain completely under your control.
+    </div>
+</body>
+</html>
